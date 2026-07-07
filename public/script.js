@@ -10,12 +10,18 @@ const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const serverMessage = document.getElementById('serverMessage');
 
+// Requires: alphanumeric characters, then "@", then alphanumeric
+// characters, then ".", then alphanumeric characters.
+// Example match: user123@example.com
+// Example non-match: test@test (no "." + text after the "@")
+const EMAIL_PATTERN = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+
 function validateEmail(email) {
   if (email.trim() === '') {
     return 'Email is required.';
   }
-  if (!email.includes('@')) {
-    return 'Email must contain an "@" symbol.';
+  if (!EMAIL_PATTERN.test(email)) {
+    return 'Enter a valid email address (e.g. user@example.com).';
   }
   return '';
 }
