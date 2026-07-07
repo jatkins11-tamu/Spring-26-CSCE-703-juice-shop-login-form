@@ -1,0 +1,13 @@
+{
+  "name": "juice-shop-login-form",
+  "version": "1.0.0",
+  "description": "Simple login form with client-side and server-side validation, built for CSCE 703 HW3 Part 2.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2"
+  }
+}
